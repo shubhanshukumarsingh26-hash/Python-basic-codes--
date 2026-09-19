@@ -1,0 +1,196 @@
+def main():
+    print("=== 18 LIST PROGRAMS IN ONE ===\n")
+
+    # 1. Create list of 5 and access via index
+    print("1. List of 5 integers and index access:")
+    lst = [10, 20, 30, 40, 50]
+    print("List:", lst)
+    for i in range(len(lst)):
+        print(f" index {i} = {lst[i]}")
+
+    # 2. Append to end
+    print("\n2. Append new item:")
+    lst = [10, 20, 30]
+    lst.append(40)
+    print(lst)
+
+    # 3. Reverse
+    print("\n3. Reverse list:")
+    lst = [1, 2, 3, 4, 5]
+    lst.reverse()
+    print(lst)
+
+    # 4. Count occurrences
+    print("\n4. Count occurrences:")
+    lst = [1, 2, 3, 2, 2, 4]
+    print(f"List {lst}, count of 2 = {lst.count(2)}")
+
+    # 5. Append list1 to list2 in front
+    print("\n5. Append list1 to list2 in front:")
+    list1 = [1, 2, 3]
+    list2 = [4, 5, 6]
+    print(list1 + list2)
+
+    # 6. Insert before 2nd element
+    print("\n6. Insert before 2nd element:")
+    lst = [10, 20, 30]
+    lst.insert(1, 99)
+    print(lst)
+
+    # 7. Remove from specified index
+    print("\n7. Remove from specified index (1):")
+    lst = [10, 20, 30, 40]
+    lst.pop(1)
+    print(lst)
+
+    # 8. Remove first occurrence
+    print("\n8. Remove first occurrence of 10:")
+    lst = [10, 20, 10, 30]
+    lst.remove(10)
+    print(lst)
+
+    # 9. 20 values operations
+    print("\n9. 20 values - similar, even/odd, pos/neg:")
+    lst = [1,2,2,3,-1,-5,4,6,8,10,1,2,12,14,16,18,20,0,-2,5]
+    print("List:", lst)
+    even = sum(1 for x in lst if x%2==0)
+    odd = len(lst) - even
+    pos = sum(1 for x in lst if x>0)
+    neg = sum(1 for x in lst if x<0)
+    print(f"Even: {even}, Odd: {odd}, Positive: {pos}, Negative: {neg}")
+    print(f"Index of duplicate 2: {[i for i,x in enumerate(lst) if x==2]}")
+
+    # 10. 10 values sort
+    print("\n10. Sort 10 values:")
+    lst = [5, 2, 9, 1, 5, 6, 3, 8, 4, 7]
+    print("Original:", lst)
+    print("sorted() asc:", sorted(lst))
+    lst.sort(reverse=True)
+    print("sort() desc:", lst)
+    print("Length:", len(lst))
+
+    # 11. Merge two lists using +
+    print("\n11. Merge two lists with +:")
+    print([1,2,3] + [4,5,6])
+
+    # 12. Acronym
+    print("\n12. Acronym:")
+    phrase = "random access memory"
+    acronym = "".join(w[0] for w in phrase.split()).upper()
+    print(f"{phrase} -> {acronym}")
+
+    # 13. Month abbreviation
+    print("\n13. Month abbreviation:")
+    months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+    n = 8
+    print(f"Month {n} = {months[n-1]}")
+
+    # 14. Insert, delete, display
+    print("\n14. Insert, delete, display:")
+    lst = [10, 20, 30]
+    print("Original:", lst)
+    lst.insert(1, 15)
+    print("After insert 15 at 1:", lst)
+    lst.remove(20)
+    print("After remove 20:", lst)
+
+    # 15. Merge two lists into dict
+    print("\n15. Merge two lists into dict:")
+    keys = ['a','b','c']
+    values = [1,2,3]
+    d = {}
+    for i in range(len(keys)):
+        d[keys[i]] = values[i]
+    print(d)
+
+    # 16. Remove duplicates
+    print("\n16. Remove duplicates:")
+    lst = [1, 2, 2, 3, 1, 4]
+    print("Original:", lst, "-> Unique:", list(set(lst)))
+
+    # 17. Two lists to dict using zip()
+    print("\n17. Two lists to dict using zip():")
+    print(dict(zip(['name','age','city'], ['Aryan',19,'Pune'])))
+
+    # 18. Common elements
+    print("\n18. Common elements:")
+    list1 = [1,2,3,4,5]
+    list2 = [4,5,6,7,8]
+    print(list(set(list1) & set(list2)))
+
+if __name__ == "__main__":
+    main()
+
+
+
+
+
+OUTPUTS:
+
+=== 18 LIST PROGRAMS IN ONE ===
+
+1. List of 5 integers and index access:
+List: [10, 20, 30, 40, 50]
+ index 0 = 10
+ index 1 = 20
+ index 2 = 30
+ index 3 = 40
+ index 4 = 50
+
+2. Append new item:
+[10, 20, 30, 40]
+
+3. Reverse list:
+[5, 4, 3, 2, 1]
+
+4. Count occurrences:
+List [1, 2, 3, 2, 2, 4], count of 2 = 3
+
+5. Append list1 to list2 in front:
+[1, 2, 3, 4, 5, 6]
+
+6. Insert before 2nd element:
+[10, 99, 20, 30]
+
+7. Remove from specified index (1):
+[10, 30, 40]
+
+8. Remove first occurrence of 10:
+[20, 10, 30]
+
+9. 20 values - similar, even/odd, pos/neg:
+List: [1, 2, 2, 3, -1, -5, 4, 6, 8, 10, 1, 2, 12, 14, 16, 18, 20, 0, -2, 5]
+Even: 14, Odd: 6, Positive: 16, Negative: 3
+Index of duplicate 2: [1, 2, 11]
+
+10. Sort 10 values:
+Original: [5, 2, 9, 1, 5, 6, 3, 8, 4, 7]
+sorted() asc: [1, 2, 3, 4, 5, 5, 6, 7, 8, 9]
+sort() desc: [9, 8, 7, 6, 5, 5, 4, 3, 2, 1]
+Length: 10
+
+11. Merge two lists with +:
+[1, 2, 3, 4, 5, 6]
+
+12. Acronym:
+random access memory -> RAM
+
+13. Month abbreviation:
+Month 8 = Aug
+
+14. Insert, delete, display:
+Original: [10, 20, 30]
+After insert 15 at 1: [10, 15, 20, 30]
+After remove 20: [10, 15, 30]
+
+15. Merge two lists into dict:
+{'a': 1, 'b': 2, 'c': 3}
+
+16. Remove duplicates:
+Original: [1, 2, 2, 3, 1, 4] -> Unique: [1, 2, 3, 4]
+
+17. Two lists to dict using zip():
+{'name': 'Aryan', 'age': 19, 'city': 'Pune'}
+
+18. Common elements:
+[4, 5]
