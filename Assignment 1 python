@@ -1,3 +1,4 @@
+# ASSIGNMENT 1: Operations on List, Tuple, Dictionary
 def main():
     print("=== ASSIGNMENT 1: Operations on List, Tuple, Dictionary ===\n")
 
@@ -63,3 +64,36 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
+OUTPUT:
+=== ASSIGNMENT 1: Operations on List, Tuple, Dictionary ===
+
+--- LIST OPERATIONS ---
+1. Original List: [1, 2, 3, 4, 5]
+2. After append(6): [1, 2, 3, 4, 5, 6]
+3. After insert(0,0): [0, 1, 2, 3, 4, 5, 6]
+4. After remove(3): [0, 1, 2, 4, 5, 6]
+5. After pop(): [0, 1, 2, 4, 5]
+6. Slicing my_list[1:4]: [1, 2, 4]
+
+--- TUPLE OPERATIONS ---
+1. Original Tuple: (10, 20, 30, 20, 40)
+2. Count of 20: 2
+3. Index of 30: 2
+4. Length: 5
+5. Slicing my_tuple[1:4]: (20, 30, 20)
+6. After Concatenation with (50,60): (10, 20, 30, 20, 40, 50, 60)
+7. After appending 100 (via conversion): (10, 20, 30, 20, 40, 100)
+
+--- DICTIONARY OPERATIONS ---
+1. Original Dict: {'name': 'Aryan', 'roll': 101, 'branch': 'CSE'}
+2. After adding age: {'name': 'Aryan', 'roll': 101, 'branch': 'CSE', 'age': 19}
+3. After update({'city':'Pune'}): {'name': 'Aryan', 'roll': 101, 'branch': 'CSE', 'age': 19, 'city': 'Pune'}
+4. Get name: Aryan
+5. Keys: ['name', 'roll', 'branch', 'age', 'city']
+6. Values: ['Aryan', 101, 'CSE', 19, 'Pune']
+7. After pop('roll'): {'name': 'Aryan', 'branch': 'CSE', 'age': 19, 'city': 'Pune'}
+8. After del branch: {'name': 'Aryan', 'age': 19, 'city': 'Pune'}
+
