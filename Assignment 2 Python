@@ -1,4 +1,4 @@
-#
+# Assignment 2: Largest of Three Numbers
 def main():
     print("=== Assignment 2: Largest of Three Numbers ===\n")
 
@@ -19,3 +19,13 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+OUTPUT:
+
+=== Assignment 2: Largest of Three Numbers ===
+
+Enter first number: 12
+Enter second number: 23
+Enter third number: 34
+
+The largest number is: 34
