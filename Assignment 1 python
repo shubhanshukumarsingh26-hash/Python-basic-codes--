@@ -1,0 +1,65 @@
+def main():
+    print("=== ASSIGNMENT 1: Operations on List, Tuple, Dictionary ===\n")
+
+    # ----- LIST OPERATIONS -----
+    print("--- LIST OPERATIONS ---")
+    my_list = [1, 2, 3, 4, 5]
+    print("1. Original List:", my_list)
+
+    my_list.append(6)
+    print("2. After append(6):", my_list)
+
+    my_list.insert(0, 0)
+    print("3. After insert(0,0):", my_list)
+
+    my_list.remove(3)
+    print("4. After remove(3):", my_list)
+
+    my_list.pop()
+    print("5. After pop():", my_list)
+
+    print("6. Slicing my_list[1:4]:", my_list[1:4])
+
+    # ----- TUPLE OPERATIONS -----
+    print("\n--- TUPLE OPERATIONS ---")
+    my_tuple = (10, 20, 30, 20, 40)
+    print("1. Original Tuple:", my_tuple)
+
+    print("2. Count of 20:", my_tuple.count(20))
+    print("3. Index of 30:", my_tuple.index(30))
+    print("4. Length:", len(my_tuple))
+    print("5. Slicing my_tuple[1:4]:", my_tuple[1:4])
+
+    new_tuple = my_tuple + (50, 60)
+    print("6. After Concatenation with (50,60):", new_tuple)
+
+    # Tuple is immutable, so to 'append'/'remove' we need to convert
+    temp_list = list(my_tuple)
+    temp_list.append(100)
+    my_tuple = tuple(temp_list)
+    print("7. After appending 100 (via conversion):", my_tuple)
+
+    # ----- DICTIONARY OPERATIONS -----
+    print("\n--- DICTIONARY OPERATIONS ---")
+    my_dict = {"name": "Aryan", "roll": 101, "branch": "CSE"}
+    print("1. Original Dict:", my_dict)
+
+    my_dict["age"] = 19
+    print("2. After adding age:", my_dict)
+
+    my_dict.update({"city": "Pune"})
+    print("3. After update({'city':'Pune'}):", my_dict)
+
+    print("4. Get name:", my_dict.get("name"))
+    print("5. Keys:", list(my_dict.keys()))
+    print("6. Values:", list(my_dict.values()))
+
+    my_dict.pop("roll")
+    print("7. After pop('roll'):", my_dict)
+
+    del my_dict["branch"]
+    print("8. After del branch:", my_dict)
+
+
+if __name__ == "__main__":
+    main()
