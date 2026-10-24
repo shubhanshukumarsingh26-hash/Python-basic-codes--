@@ -1,0 +1,93 @@
+import pandas as pd
+
+# Sample DataFrame (use your own .csv/.xls file)
+data = {
+    'Name': ['Aman', 'Riya', 'Aman', 'Karan', None, 'Neha'],
+    'Marks': [85, None, 85, 92, 78, 88],
+    'City': ['Pune', 'Mumbai', 'Pune', 'Delhi', 'Pune', None]
+}
+df = pd.DataFrame(data)
+
+print("Original DataFrame:\n", df)
+
+# Data Exploration
+print(df.head())
+print(df.info())
+print(df.describe())
+
+# 1. Handling Missing Values
+print(df.isnull().sum())
+df_drop = df.dropna()  # remove rows with NA
+
+df['Marks'] = df['Marks'].fillna(df['Marks'].mean()) # fill numeric with mean
+df['Name'] = df['Name'].fillna(df['Name'].mode()[0])
+df['City'] = df['City'].fillna(df['City'].mode()[0])
+
+# 2. Handling Duplicates
+print(f"Duplicates: {df.duplicated().sum()}")
+df = df.drop_duplicates()
+
+# 3. Filtering using loc[]
+filtered = df.loc[df['Marks'] > 80]
+print(filtered)
+
+# 4. Remove Irrelevant using drop()
+df_final = df.drop(index=2, errors='ignore')
+print("Final Cleaned Data:\n", df_final)
+
+
+
+
+output:
+
+Original DataFrame:
+     Name  Marks    City
+0   Aman   85.0    Pune
+1   Riya    NaN  Mumbai
+2   Aman   85.0    Pune
+3  Karan   92.0   Delhi
+4    NaN   78.0    Pune
+5   Neha   88.0     NaN
+    Name  Marks    City
+0   Aman   85.0    Pune
+1   Riya    NaN  Mumbai
+2   Aman   85.0    Pune
+3  Karan   92.0   Delhi
+4    NaN   78.0    Pune
+<class 'pandas.DataFrame'>
+RangeIndex: 6 entries, 0 to 5
+Data columns (total 3 columns):
+ #   Column  Non-Null Count  Dtype  
+---  ------  --------------  -----  
+ 0   Name    5 non-null      str    
+ 1   Marks   5 non-null      float64
+ 2   City    5 non-null      str    
+dtypes: float64(1), str(2)
+memory usage: 276.0 bytes
+None
+           Marks
+count   5.000000
+mean   85.600000
+std     5.128353
+min    78.000000
+25%    85.000000
+50%    85.000000
+75%    88.000000
+max    92.000000
+Name     1
+Marks    1
+City     1
+dtype: int64
+Duplicates: 1
+    Name  Marks    City
+0   Aman   85.0    Pune
+1   Riya   85.6  Mumbai
+3  Karan   92.0   Delhi
+5   Neha   88.0    Pune
+Final Cleaned Data:
+     Name  Marks    City
+0   Aman   85.0    Pune
+1   Riya   85.6  Mumbai
+3  Karan   92.0   Delhi
+4   Aman   78.0    Pune
+5   Neha   88.0    Pune
